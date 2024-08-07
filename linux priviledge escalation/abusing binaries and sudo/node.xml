@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node>
+<version>6</version>
+<dict>
+  <key>title</key><string>Abusing binaries and sudo</string>
+  <key>nodeid</key><string>bb43612c-1bc2-485f-9307-b49dc96eb6ae</string>
+  <key>modified_time</key><integer>1693038011</integer>
+  <key>version</key><integer>6</integer>
+  <key>content_type</key><string>text/xhtml+xml</string>
+  <key>created_time</key><integer>1689012487</integer>
+  <key>order</key><integer>3</integer>
+</dict>
+</node>

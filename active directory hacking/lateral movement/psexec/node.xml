@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node>
+<version>6</version>
+<dict>
+  <key>title</key><string>Psexec</string>
+  <key>nodeid</key><string>95f7ae6e-d97a-4c04-9f01-ae2c38846f66</string>
+  <key>modified_time</key><integer>1689837590</integer>
+  <key>version</key><integer>6</integer>
+  <key>content_type</key><string>text/xhtml+xml</string>
+  <key>created_time</key><integer>1689837561</integer>
+  <key>order</key><integer>2</integer>
+</dict>
+</node>

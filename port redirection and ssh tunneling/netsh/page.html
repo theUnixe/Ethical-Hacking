@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Netsh</title>
+</head><body>xfreerdp /u:rdp_admin /p:P@ssw0rd! /v:<b>192.168.199.64</b>&nbsp; &nbsp;<br/>
+<br/>
+netsh interface portproxy add v4tov4 listenport=2222 listenaddress=<b>192.168.199.64</b>&nbsp; connectport=4545 connectaddress=<b>10.4.199.215</b>&nbsp; &nbsp;<br/>
+<br/>
+netstat -anp TCP | find "2222"<br/>
+<br/>
+netsh interface portproxy show all<br/>
+<br/>
+netsh advfirewall firewall add rule name="port_forward_ssh_2222" protocol=TCP dir=in localip=<b>192.168.199.64</b>&nbsp;localport=2222 action=allow<br/>
+<br/>
+ssh database_admin@<b>192.168.199.64</b>&nbsp;-p2222<br/>
+<br/>
+netsh advfirewall firewall delete rule name="port_forward_ssh_2222"<br/>
+<br/>
+netsh interface portproxy del v4tov4 listenport=2222 listenaddress=<b>192.168.199.64</b>&nbsp;<br/>
+<br/>
+</body></html>

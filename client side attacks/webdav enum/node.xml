@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node>
+<version>6</version>
+<dict>
+  <key>title</key><string>WebDav Enum</string>
+  <key>nodeid</key><string>83161fe6-3929-4ad1-a9d5-afaf9e2a680e</string>
+  <key>modified_time</key><integer>1687980677</integer>
+  <key>version</key><integer>6</integer>
+  <key>content_type</key><string>text/xhtml+xml</string>
+  <key>created_time</key><integer>1687974855</integer>
+  <key>order</key><integer>1</integer>
+</dict>
+</node>

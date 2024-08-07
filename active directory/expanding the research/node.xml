@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node>
+<version>6</version>
+<dict>
+  <key>title</key><string>Expanding The Research</string>
+  <key>nodeid</key><string>b1ead34f-60e9-45d5-9b1c-204afa04b3de</string>
+  <key>modified_time</key><integer>1689621690</integer>
+  <key>version</key><integer>6</integer>
+  <key>content_type</key><string>text/xhtml+xml</string>
+  <key>created_time</key><integer>1689619531</integer>
+  <key>order</key><integer>3</integer>
+</dict>
+</node>

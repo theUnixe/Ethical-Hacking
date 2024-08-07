@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Password Cracking </title>
+</head><body>echo -n "secret" | sha256sum &nbsp; {create string into hash}<br/>
+<br/>
+echo -n "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789" | wc -c {calculate string length}<br/>
+<br/>
+python3 -c "print(62**5)" &nbsp; {possible combinations}<br/>
+<br/>
+head /usr/share/wordlists/rockyou.txt {first 10 items}<br/>
+<br/>
+echo \$1 &gt; demo.rule {appending 1 at end} for mutation<br/>
+<br/>
+hashcat -r demo1.rule --stdout demo.txt<br/>
+<br/>
+hashcat -m 0 crackme.txt /usr/share/wordlists/rockyou.txt -r demo3.rule --force {cracking hash with mutation rule}<br/>
+<br/>
+ls -la /usr/share/hashcat/rules/ {hashcat pre installed rules}<br/>
+<br/>
+Get-ChildItem -Path C:\ -Include *.kdbx -File -Recurse -ErrorAction SilentlyContinue<br/>
+<br/>
+keepass2john Database.kdbx &gt; keepass.hash {conversion of file format}<br/>
+<br/>
+hashcat --help | grep -i "KeePass" {Find hashing algorithm}<br/>
+<br/>
+hashcat -m 13400 keepass.hash /usr/share/wordlists/rockyou.txt -r /usr/share/hashcat/rules/rockyou-30000.rule --force<br/>
+<br/>
+sudo impacket-smbserver armaan . -smb2support {SMB Share}<br/>
+<br/>
+</body></html>

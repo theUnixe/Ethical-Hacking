@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node>
+<version>6</version>
+<dict>
+  <key>title</key><string>Shadow Copies</string>
+  <key>nodeid</key><string>cdcb97f6-a9d9-4e6a-9e3e-ad165baaae71</string>
+  <key>modified_time</key><integer>1689862853</integer>
+  <key>version</key><integer>6</integer>
+  <key>content_type</key><string>text/xhtml+xml</string>
+  <key>created_time</key><integer>1689862784</integer>
+  <key>order</key><integer>8</integer>
+</dict>
+</node>

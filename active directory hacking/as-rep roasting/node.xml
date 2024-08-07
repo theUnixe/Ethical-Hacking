@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node>
+<version>6</version>
+<dict>
+  <key>title</key><string>AS-REP Roasting</string>
+  <key>nodeid</key><string>8a216a1a-b2a2-4e19-8ca1-96a959af7a7e</string>
+  <key>modified_time</key><integer>1698937460</integer>
+  <key>version</key><integer>6</integer>
+  <key>content_type</key><string>text/xhtml+xml</string>
+  <key>created_time</key><integer>1689704854</integer>
+  <key>order</key><integer>2</integer>
+</dict>
+</node>

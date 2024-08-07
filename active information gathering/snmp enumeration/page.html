@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>SNMP Enumeration</title>
+</head><body>* nmap -sU --open -p &lt;ip address-range&gt; -oG &lt;file name&gt;<br/>
+* for ip in $(seq 1 254); do echo &lt;192.168.50.$ip; done &gt; ips<br/>
+* onesixtyone -c community -i ips<br/>
+<br/>
+* snmpwalk -c public -v1 -t 10 &lt;ip address&gt;<br/>
+<br/>
+* snmpwalk -c public -v1 &lt;ip address&gt; 1.3.6.1.4.1.77.1.2.25 {LOCAL USERS}<br/>
+<br/>
+* snmpwalk -c public -v1 &lt;ip address&gt; 1.3.6.1.2.1.25.4.2.1.2 {Current running processes}<br/>
+<br/>
+* snmpwalk -c public -v1 &lt;ip address&gt; 1.3.6.1.2.1..25.6.3.1.2 {Installed Softwares}<br/>
+<br/>
+* snmpwalk -c public -v1 &lt;ip address&gt; 1.3.6.1.2.1.6.13.1.3<br/>
+{Listening TCP Ports}<br/>
+<br/>
+*<br/>
+<br/>
+<br/>
+<br/>
+</body></html>

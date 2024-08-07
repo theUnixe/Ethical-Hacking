@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>SSH Dynamic Port Forwarding</title>
+</head><body>python3 -c 'import pty; pty.spawn("/bin/bash")'<br/>
+<br/>
+ssh -N -D 0.0.0.0:9999 database_admin@<b>10.4.246.215</b><br/>
+<br/>
+tail /etc/proxychains4.conf<br/>
+<br/>
+proxychains smbclient -L //<b>172.16.246.217</b>/ -U hr_admin --password=Welcome1234<br/>
+<br/>
+proxychains nmap -vvv -sT --top-ports=20 -Pn <b>172.16.246.217</b>&nbsp; &nbsp;<br/>
+<br/>
+proxychains nmap -sT <b>192.168.246.64</b>&nbsp;-p9000-9100 -Pn -n -T5<br/>
+<br/>
+<div style="text-align: left"><span style="font-size: 16pt"><span style="font-family: gg sans"><br/>
+</span></span></div><div style="text-align: left"><span style="font-size: 16pt"><span style="font-family: gg sans">&nbsp;<span style="font-family: inherit">proxychains -q /usr/bin/nc.traditional -zv 10.4.246.64 9000-9100 -w 1</span></span></span></div>&nbsp; <br/>
+<br/>
+</body></html>

